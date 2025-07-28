@@ -33,6 +33,30 @@ adobe/
 - **Features**: Relevance scoring, section prioritization, multi-document processing
 - **Performance**: Scalable algorithm with contextual understanding
 
+## 🧠 Approach
+
+This solution performs intelligent section retrieval based on a user persona and task using offline NLP and vector search.
+
+### 🔍 Pipeline Overview
+
+#### 📄 PDF Section Extraction  
+PDFs are parsed using **PyMuPDF** to extract sections and corresponding text, saved in structured **JSON**.
+
+#### ✂️ Text Chunking  
+Long sections are split into smaller, coherent **chunks** for improved embedding and search accuracy.
+
+#### 🧠 Embedding & Vector DB Storage  
+Chunks are embedded using a lightweight offline model and stored in **ChromaDB** for fast **semantic search**.
+
+#### 🔎 Semantic Retrieval  
+**Persona + task** query is embedded and used to retrieve **top 10 relevant chunks** from ChromaDB.
+
+#### 🧠 Reranking with Nomic  
+Retrieved chunks are **reranked using the `nomic-embed-text` model** for better alignment with persona intent.
+
+#### 🧾 Final Output Formatting  
+Top 5 sections are selected and returned in **structured JSON** format as per challenge requirements.
+
 ## 🛠️ Technical Stack
 
 | Component         | Tool / Library                | Purpose                                               |
@@ -62,42 +86,4 @@ adobe/
 
 
 
-🧠 Approach
-Our solution for Challenge 1B focuses on intelligent section retrieval from PDFs based on a given persona and job to be done. The pipeline combines structural text parsing, semantic understanding, and advanced reranking techniques, all running fully offline.
 
-🔍 Step-by-Step Workflow
-Section Extraction from PDFs
-
-Each PDF is parsed to identify logical sections and their respective text using PyMuPDF.
-
-The extracted section-wise data is stored in structured JSON format.
-
-Chunking for Vector Embedding
-
-Long sections are broken into smaller, coherent chunks to improve retrieval precision.
-
-These chunks are formatted to preserve section context for accurate semantic mapping.
-
-Embedding and Vector Storage
-
-All chunks are embedded using a lightweight, offline embedding model.
-
-The embeddings are stored in a local ChromaDB vector database for fast querying.
-
-Semantic Search (Persona + Task Based)
-
-At runtime, the user persona and job description are converted into a query.
-
-ChromaDB performs a similarity search to retrieve the top 10 most relevant chunks.
-
-Reranking with Nomic Embed Text
-
-Retrieved results are reranked using Nomic’s high-quality nomic-embed-text model.
-
-The reranking process evaluates how well each chunk aligns with the persona’s goal.
-
-Final Output Generation
-
-Top 5 ranked sections are selected.
-
-The final result is formatted into a clean, structured JSON output with section titles and summaries.
