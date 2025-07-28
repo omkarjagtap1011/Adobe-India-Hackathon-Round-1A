@@ -34,12 +34,6 @@ adobe/
 - **Features**: Title detection, multilevel heading extraction, JSON output
 - **Performance**: Optimized for speed and accuracy
 
-### Challenge 1B: Persona-Driven Document Intelligence
-- **Purpose**: Intelligent document analysis based on user personas and tasks
-- **Technology**: Python 3.9, PyMuPDF, Advanced NLP techniques
-- **Features**: Relevance scoring, section prioritization, multi-document processing
-- **Performance**: Scalable algorithm with contextual understanding
-
 ## 🛠️ Technical Stack
 
 - **Language**: Python 3.10
@@ -74,12 +68,9 @@ If a page has no extractable text or contains scanned content, Tesseract OCR is 
 
 **JSON Output Generation**
 The final output is a structured JSON with the document title and a hierarchical outline[], each entry containing:
-
-level: H1/H2/H3
-
-text: Header text
-
-page: Page number
+level: H1/H2/H3,
+text: Header text,
+page: Page number.
 
 ## 🎯 Key Features
 
@@ -89,13 +80,7 @@ page: Page number
 - Error handling and logging
 - Memory-efficient processing
 - Multilingual document support
-
-### Advanced Document Intelligence
-- Persona-aware content analysis
-- Job-specific relevance scoring
-- Hierarchical section detection
-- Contextual understanding
-
+  
 ### Enterprise-Ready
 - Docker containerization
 - Standardized JSON output
@@ -129,13 +114,6 @@ Our solutions prioritize:
 - Performance optimization under 60 seconds
 - Multilingual support and error handling
 
-✅ **Challenge 1B Requirements**
-- Persona-driven document intelligence
-- Relevance scoring and section prioritization
-- Multi-document processing capability
-- Structured JSON output with metadata
-- Docker containerization (AMD64)
-
 ## 🏗️ Architecture Decisions
 
 ### PDF Processing
@@ -161,8 +139,6 @@ Our solutions prioritize:
 - **High Accuracy at Low Cost**: Delivers near-Adobe-level output using lightweight models
 - **Auto-Evaluation Pipeline**: Built-in comparator script to match Adobe’s JSON structure
 - **Batch-Ready Design**: Supports multi-document processing with minimal config
-
-
 
 ## 📝 Documentation
 
