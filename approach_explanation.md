@@ -35,20 +35,21 @@ adobe/
 
 ## 🛠️ Technical Stack
 
-| Layer                      | Technology / Library                               | Purpose                                                    |
-| -------------------------- | -------------------------------------------------- | ---------------------------------------------------------- |
-| **Language**               | Python 3.10                                        | Core programming language                                  |
-| **PDF Text Extraction**    | PyMuPDF (`fitz`)                                   | Fast and lightweight PDF parsing                           |
-| **Chunk Extraction**       | Custom logic (`extract_struct.py`)                 | Extracts and structures section-wise text                  |
-| **Embeddings**             | [Ollama](https://ollama.com/) + `nomic-embed-text` | Generates semantic embeddings offline                      |
-| **Vector Store**           | [ChromaDB](https://www.trychroma.com/)             | Stores and retrieves embeddings for similarity search      |
-| **Reranking**              | `sentence-transformers` → `CrossEncoder`           | Reranks top retrieved sections based on semantic relevance |
-| **Model Integration**      | HuggingFace Hub (`hf_hub_download`)                | Downloads TinyLLaMA or other GGUF models if needed         |
-| **JSON Handling**          | Standard Python `json` module                      | Load and save structured input/output                      |
-| **LLM Runtime (Optional)** | `llama-cpp-python` + TinyLLaMA GGUF                | Lightweight local inference if LLM reasoning used          |
-| **Embedding Server**       | Ollama (via REST API)                              | Hosts the embedding model locally over HTTP                |
-| **Vector Format**          | Cosine similarity + metadata                       | Enables semantic search with meta filters                  |
-| **Containerization**       | Docker (Optional for deployment)                   | Can containerize the full system for reproducibility       |
+| Component         | Tool / Library                | Purpose                                               |
+|------------------|-------------------------------|-------------------------------------------------------|
+| Language          | Python 3.10                    | Core programming language                             |
+| PDF Parsing       | PyMuPDF (`fitz`)               | Extracts section-wise text from PDFs                 |
+| Structuring Logic | `extract_struct.py`            | Identifies section headers and chunks content         |
+| Embeddings        | `nomic-embed-text` (via Ollama)| Generates semantic vectors and reranking embeddings   |
+| Vector Store      | ChromaDB                       | Stores and queries vectors using cosine similarity    |
+| Reranking Model   | CrossEncoder (MiniLM)          | Reranks top sections based on persona/task relevance  |
+| LLM Access (opt.) | TinyLLaMA via `llama-cpp-python` | Local model loading via HuggingFace (optional)       |
+| Embedding Server  | Ollama                         | Serves embedding models via local API                |
+| Data Format       | JSON                           | For structured input and output                      |
+| Containerization  | Docker (AMD64)                 | Optional for reproducible, isolated execution         |
+
+
+   
 
 
 
