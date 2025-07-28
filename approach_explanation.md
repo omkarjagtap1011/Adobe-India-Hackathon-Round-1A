@@ -1,61 +1,102 @@
 # Adobe "Connecting the Dots" Hackathon Solutions
+
 This repository contains solutions for Adobe's "Connecting the Dots" hackathon challenges focusing on intelligent document processing and analysis.
 
 ## 🏆 Challenge Overview
+
 Adobe's hackathon presents real-world document intelligence problems that require innovative solutions combining PDF processing, natural language understanding, and user-centric design.
 
-## Round 1A:
-## 🧠 Our Approach
-Our solution takes a hybrid visual + text-based strategy for extracting structured headings from PDFs, optimized for offline execution.
+## 📁 Project Structure
 
-🔍 **Pipeline Overview**
-**PDF → Image Conversion**
-Each PDF page is converted into a high-resolution image to enable visual analysis.
+```
+adobe/
+├── Challenge_1a/          # PDF Outline Extractor
+│   ├── main.py           # Core extraction algorithm
+│   ├── requirements.txt  # Dependencies
+│   ├── Dockerfile        # Container configuration
+│   └── README.md         # Challenge-specific documentation
+│
+├── Challenge_1b/          # Persona-Driven Document Intelligence
+│   ├── main.py           # Core intelligence algorithm
+│   ├── requirements.txt  # Dependencies
+│   ├── Dockerfile        # Container configuration
+│   └── README.md         # Challenge-specific documentation
+│
+├── .gitignore            # Git ignore rules
+└── README.md             # This file
+```
+## 🚀 Solutions Summary
 
-**YOLOv8-Based Layout Detection**
-We use a lightweight **YOLOv10 model (trained/fine-tuned for document layouts)** to detect key elements such as:
-1.Titles
-2.Section Headers (H1, H2, H3)
-3.Tables, Images, and other structural blocks
+### Challenge 1B: Persona-Driven Document Intelligence
+- **Purpose**: Intelligent document analysis based on user personas and tasks
+- **Technology**: Python 3.9, PyMuPDF, Advanced NLP techniques
+- **Features**: Relevance scoring, section prioritization, multi-document processing
+- **Performance**: Scalable algorithm with contextual understanding
 
-This returns bounding boxes and labels for relevant content.
+## 🛠️ Technical Stack
 
-**Region-Specific Text Extraction (PyMuPDF)**
-For each title/header region detected by YOLO(5.8 MB), we use PyMuPDF to extract only the text within that box on the corresponding PDF page. This ensures clean, layout-aware extraction while avoiding surrounding noise.
-
-**Header Hierarchy via Clustering**
-The extracted headers are analyzed using their font sizes, x/y positions, and page numbers. A clustering algorithm (KMeans) groups similar headers and assigns hierarchy levels (Title, H1, H2, H3).
-
-**OCR Fallback (Optional)**
-If a page has no extractable text or contains scanned content, Tesseract OCR is triggered on that image page—only when required.
-
-**JSON Output Generation**
-The final output is a structured JSON with the document title and a hierarchical outline[], each entry containing:
-level: H1/H2/H3,
-text: Header text,
-page: Page number.
-
-
-## 🎯 Key Features
-
-### Robust PDF Processing
-- Multi-format document support
-- Intelligent text extraction
-- Error handling and logging
-- Memory-efficient processing
-- Multilingual document support
+| Layer                      | Technology / Library                               | Purpose                                                    |
+| -------------------------- | -------------------------------------------------- | ---------------------------------------------------------- |
+| **Language**               | Python 3.10                                        | Core programming language                                  |
+| **PDF Text Extraction**    | PyMuPDF (`fitz`)                                   | Fast and lightweight PDF parsing                           |
+| **Chunk Extraction**       | Custom logic (`extract_struct.py`)                 | Extracts and structures section-wise text                  |
+| **Embeddings**             | [Ollama](https://ollama.com/) + `nomic-embed-text` | Generates semantic embeddings offline                      |
+| **Vector Store**           | [ChromaDB](https://www.trychroma.com/)             | Stores and retrieves embeddings for similarity search      |
+| **Reranking**              | `sentence-transformers` → `CrossEncoder`           | Reranks top retrieved sections based on semantic relevance |
+| **Model Integration**      | HuggingFace Hub (`hf_hub_download`)                | Downloads TinyLLaMA or other GGUF models if needed         |
+| **JSON Handling**          | Standard Python `json` module                      | Load and save structured input/output                      |
+| **LLM Runtime (Optional)** | `llama-cpp-python` + TinyLLaMA GGUF                | Lightweight local inference if LLM reasoning used          |
+| **Embedding Server**       | Ollama (via REST API)                              | Hosts the embedding model locally over HTTP                |
+| **Vector Format**          | Cosine similarity + metadata                       | Enables semantic search with meta filters                  |
+| **Containerization**       | Docker (Optional for deployment)                   | Can containerize the full system for reproducibility       |
 
 
-## 🔧 Development Approach
 
-Our solutions prioritize:
 
-1. **Accuracy**: Layout + clustering + font rules for precise extraction
-2. **Performance**: CPU-optimized, under 10s per 50-page PDF
-3. **Scalability**: Modular design for easy extension
-4. **Usability**: Simple I/O, clear logs, auto-evaluation
-5. **Fallbacks**: OCR auto-triggers on scanned pages
-6. **Automation**: Batch mode and comparator for fast testing
 
-**Built for Adobe's "Connecting the Dots" Hackathon**  
-*Innovative document intelligence solutions powered by advanced NLP and intelligent algorithms*
+
+
+
+
+
+
+
+🧠 Approach
+Our solution for Challenge 1B focuses on intelligent section retrieval from PDFs based on a given persona and job to be done. The pipeline combines structural text parsing, semantic understanding, and advanced reranking techniques, all running fully offline.
+
+🔍 Step-by-Step Workflow
+Section Extraction from PDFs
+
+Each PDF is parsed to identify logical sections and their respective text using PyMuPDF.
+
+The extracted section-wise data is stored in structured JSON format.
+
+Chunking for Vector Embedding
+
+Long sections are broken into smaller, coherent chunks to improve retrieval precision.
+
+These chunks are formatted to preserve section context for accurate semantic mapping.
+
+Embedding and Vector Storage
+
+All chunks are embedded using a lightweight, offline embedding model.
+
+The embeddings are stored in a local ChromaDB vector database for fast querying.
+
+Semantic Search (Persona + Task Based)
+
+At runtime, the user persona and job description are converted into a query.
+
+ChromaDB performs a similarity search to retrieve the top 10 most relevant chunks.
+
+Reranking with Nomic Embed Text
+
+Retrieved results are reranked using Nomic’s high-quality nomic-embed-text model.
+
+The reranking process evaluates how well each chunk aligns with the persona’s goal.
+
+Final Output Generation
+
+Top 5 ranked sections are selected.
+
+The final result is formatted into a clean, structured JSON output with section titles and summaries.
