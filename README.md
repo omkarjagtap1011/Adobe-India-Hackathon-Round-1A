@@ -149,22 +149,19 @@ Each challenge folder contains detailed README files with:
 
 ## 🔗 Getting Started
 
-1. *Review Individual Challenges*: Check Challenge_1a and Challenge_1b folders
-2. *Understand Requirements*: Read challenge-specific README files
-3. *Examine Solutions*: Study the main.py implementations
-4. *Test Locally*: Use the provided Docker configurations
+# ⬇️ Build the Docker image for Round 1A
+docker build --platform linux/amd64 -t adobe-india-hackathon-round-1a .
+
+# ▶️ Run the container with input/output folders mounted (no network access)
+docker run --rm \
+  -v $(pwd)/input:/app/input \
+  -v $(pwd)/output:/app/output \
+  --network none \
+  adobe-india-hackathon-round-1a
 
 ---
 
 *Built for Adobe's "Connecting the Dots" Hackathon*  
 Innovative document intelligence solutions powered by advanced NLP and intelligent algorithms
 
-```bash
-docker build --platform linux/amd64 -t adobe-india-hackathon-round-1a .
 
-
-
-Run the Processor
-
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none adobe-india-hackathon-round-1a:somerandomidentifier
-```
