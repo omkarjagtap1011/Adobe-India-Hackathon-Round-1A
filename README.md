@@ -149,10 +149,10 @@ Each challenge folder contains detailed README files with:
 
 ## 🔗 Getting Started
 
-# ⬇️ Build the Docker image for Round 1A
+## ⬇️ Build the Docker image for Round 1A
 docker build --platform linux/amd64 -t adobe-india-hackathon-round-1a .
 
-# ▶️ Run the container with input/output folders mounted (no network access)
+## ▶️ Run the container with input/output folders mounted
 docker run --rm \
   -v $(pwd)/input:/app/input \
   -v $(pwd)/output:/app/output \
