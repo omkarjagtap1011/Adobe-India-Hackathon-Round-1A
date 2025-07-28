@@ -9,22 +9,22 @@ Adobe's hackathon presents real-world document intelligence problems that requir
 ## 📁 Project Structure
 
 
-adobe/
-├── Challenge_1a/          # PDF Outline Extractor
-│   ├── main.py           # Core extraction algorithm
-│   ├── requirements.txt  # Dependencies
-│   ├── Dockerfile        # Container configuration
-│   └── README.md         # Challenge-specific documentation
-│
-├── Challenge_1b/          # Persona-Driven Document Intelligence
-│   ├── main.py           # Core intelligence algorithm
-│   ├── requirements.txt  # Dependencies
-│   ├── Dockerfile        # Container configuration
-│   └── README.md         # Challenge-specific documentation
-│
-├── .gitignore            # Git ignore rules
-└── README.md             # This file
-
+ADOBE_PDF_EXTRACTORS/
+└── Challenge_1a/
+    ├── __pycache__/             # Compiled Python bytecode
+    ├── input/                   # Input PDF files for extraction
+    ├── models/                  # YOLO or clustering model files
+    ├── sample_dataset/          # Sample files for testing and evaluation
+    │
+    ├── .dockerignore            # Docker ignore rules
+    ├── .gitignore               # Git ignore rules
+    ├── Dockerfile               # Docker build script
+    │
+    ├── main.py                  # Main entry script for PDF processing
+    ├── process_pdfs.py          # Core logic for heading/title extraction
+    ├── processing.log           # Logs for tracking processing output
+    ├── README.md                # Challenge 1A documentation
+    └── requirements.txt         # List of required Python packages
 
 ## 🚀 Solutions Summary
 
