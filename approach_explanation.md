@@ -33,29 +33,39 @@ adobe/
 - **Features**: Relevance scoring, section prioritization, multi-document processing
 - **Performance**: Scalable algorithm with contextual understanding
 
+---
+
 ## 🧠 Approach
 
-This solution performs intelligent section retrieval based on a user persona and task using offline NLP and vector search.
+Our system identifies and returns the most relevant sections of a PDF tailored to a persona's intent by combining:
 
-### 🔍 Pipeline Overview
+•⁠  ⁠Text-based PDF parsing
+•⁠  ⁠Lightweight offline embedding
+•⁠  ⁠Vector similarity search
+•⁠  ⁠Persona-aware reranking
 
-#### 📄 PDF Section Extraction  
-PDFs are parsed using **PyMuPDF** to extract sections and corresponding text, saved in structured **JSON**.
+---
 
-#### ✂️ Text Chunking  
-Long sections are split into smaller, coherent **chunks** for improved embedding and search accuracy.
+## 🔍 Pipeline Overview
 
-#### 🧠 Embedding & Vector DB Storage  
-Chunks are embedded using a lightweight offline model and stored in **ChromaDB** for fast **semantic search**.
+1.⁠ ⁠*PDF Section Extraction*  
+   → Parse PDFs with *PyMuPDF* into structured sections saved as JSON.
 
-#### 🔎 Semantic Retrieval  
-**Persona + task** query is embedded and used to retrieve **top 10 relevant chunks** from ChromaDB.
+2.⁠ ⁠*Text Chunking*  
+   → Split long sections into *smaller coherent chunks* for better semantic representation.
 
-#### 🧠 Reranking with Nomic  
-Retrieved chunks are **reranked using the `nomic-embed-text` model** for better alignment with persona intent.
+3.⁠ ⁠*Embedding & Storage*  
+   → Embed each chunk using a *lightweight offline model. Store in **ChromaDB* for fast vector search.
 
-#### 🧾 Final Output Formatting  
-Top 5 sections are selected and returned in **structured JSON** format as per challenge requirements.
+4.⁠ ⁠*Semantic Querying*  
+   → Embed the combined *persona + task query* and retrieve *top 10 relevant chunks* from ChromaDB.
+
+5.⁠ ⁠*Reranking with Nomic*  
+   → Refine relevance using the *nomic-embed-text* model for *intent-aware ranking*.
+
+6.⁠ ⁠*Output Formatting*  
+   → Return *top 5 matched sections* in a structured ⁠ output.json ⁠.
+
 
 ## 🛠️ Technical Stack
 
