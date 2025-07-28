@@ -56,3 +56,6 @@ Our solutions prioritize:
 4. **Usability**: Simple I/O, clear logs, auto-evaluation
 5. **Fallbacks**: OCR auto-triggers on scanned pages
 6. **Automation**: Batch mode and comparator for fast testing
+
+**Built for Adobe's "Connecting the Dots" Hackathon**  
+*Innovative document intelligence solutions powered by advanced NLP and intelligent algorithms*
