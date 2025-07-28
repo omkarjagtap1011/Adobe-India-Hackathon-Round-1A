@@ -4,7 +4,7 @@ import json
 import cv2
 import easyocr
 import numpy as np
-from ultralytics import YOLO
+from ultralytics import YOLO  # type: ignore
 from multiprocessing import Process, Queue, cpu_count
 from huggingface_hub import hf_hub_download
 import fitz
@@ -119,7 +119,7 @@ def worker(task_queue: Queue, model_path: str, result_queue: Queue):
                         x1, y1, x2, y2, conf, cls = det
                         class_id = int(cls)
                         class_name = CLASS_MAP.get(class_id, None)
-                        if class_name not in {"Title", "Section-header"}:
+                        if class_name not in {"Title", "Section-header","Text"}:
                             continue
 
                         x1, y1 = max(0, x1 - PADDING), max(0, y1 - PADDING)
@@ -146,19 +146,21 @@ def worker(task_queue: Queue, model_path: str, result_queue: Queue):
                                 collected_text += b[4].strip() + " "
 
                         text = collected_text.strip()
+                        text = ' '.join(text.replace("\n", " ").replace("•", " ").split())
 
                         # Fallback to OCR if no text extracted
                         if not text:
                             crop = image_np[int(y1):int(y2), int(x1):int(x2)]
                             ocr_result = ocr_model.readtext(crop, detail=1)
                             text = " ".join([res[1] for res in ocr_result]).strip()
-
+                            conf = np.mean([res[2] for res in ocr_result]) if ocr_result else 0.5
 
                         output.append({
                             "type": class_name,
                             "bbox": [int(x1), int(y1), int(x2), int(y2)],
                             "text": text,
-                            "conf": float(conf),
+                            "ocr_conf": float(conf),
+                            # "conf": float(conf),
                             "page": page_idx
                         })
                     except Exception as e:
@@ -213,8 +215,12 @@ def detect_hierarchy(layout_data, num_heading_levels=3):
             text_len = len(item["text"].strip())
             confidence = item.get("ocr_conf", 1.0)
 
-            if text_len < 2 or confidence < 0.5:
+            # if text_len < 2 or confidence < 0.5:
+            #     continue
+
+            if len(item["text"].strip()) < 2 or confidence < 0.3:
                 continue
+
 
             features.append([height, width, x_center, y_pos, text_len, confidence])
             header_items.append(item)
@@ -262,45 +268,6 @@ def detect_hierarchy(layout_data, num_heading_levels=3):
         traceback.print_exc()
         return []
 
-# --- Title Detection Logic ---
-def detect_title(sorted_items):
-    try:
-        title_blocks = [item for item in sorted_items if item["type"] == "Title"]
-        if not title_blocks:
-            return ""
-
-        first_page = min(t["page"] for t in title_blocks)
-        page_title_blocks = [t for t in title_blocks if t["page"] == first_page]
-
-        if not page_title_blocks:
-            return ""
-
-        # Estimate page size from blocks (fallback: 1000x1000)
-        max_x = max(b["bbox"][2] for b in page_title_blocks)
-        max_y = max(b["bbox"][3] for b in page_title_blocks)
-
-        for b in page_title_blocks:
-            b["title_score"] = compute_title_score(b, page_width=max_x, page_height=max_y)
-
-        # Sort by score descending
-        page_title_blocks.sort(key=lambda b: b["title_score"], reverse=True)
-
-        best = page_title_blocks[0]
-
-        threshold_y = best["bbox"][3] + 10
-        candidates = [
-            b for b in page_title_blocks
-            if b["bbox"][1] <= threshold_y and abs(b["bbox"][1] - best["bbox"][1]) < 100
-        ]
-        candidates = sorted(candidates, key=lambda b: b["bbox"][0])  # left to right
-
-        full_title = " ".join(b["text"].strip() for b in candidates if b["text"].strip())
-        return full_title.strip()
-    except Exception as e:
-        logging.error(f"Error in title detection: {e}")
-        print(f"Error in title detection: {e}")
-        traceback.print_exc()
-        return ""
 
 def compute_title_score(block, page_width=1000, page_height=1000):
     try:
@@ -314,15 +281,75 @@ def compute_title_score(block, page_width=1000, page_height=1000):
         size_score = height / page_height
 
         # Weighted sum of components
-        return 0.35 * size_score + 0.25 * conf_score + 0.2 * center_score + 0.2 * y_score
+        # return 0.35 * size_score + 0.25 * conf_score + 0.2 * center_score + 0.2 * y_score
+        return (
+            0.4 * size_score +
+            0.4 * conf_score +  # previously 0.25
+            0.1 * center_score +
+            0.1 * y_score
+        )
     except Exception as e:
         logging.error(f"Error in title score computation: {e}")
         print(f"Error in title score computation: {e}")
         traceback.print_exc()
         return 0
 
-# --- Main ---
-if __name__ == "_main_":
+def detect_title(sorted_items):
+    try:
+        title_blocks = [item for item in sorted_items if item["type"] == "Title"]
+        
+        if title_blocks:
+            first_page = min(t["page"] for t in title_blocks)
+            page_title_blocks = [t for t in title_blocks if t["page"] == first_page]
+
+            if page_title_blocks:
+                # Estimate page size
+                max_x = max(b["bbox"][2] for b in page_title_blocks)
+                max_y = max(b["bbox"][3] for b in page_title_blocks)
+
+                for b in page_title_blocks:
+                    b["title_score"] = compute_title_score(b, page_width=max_x, page_height=max_y)
+
+                page_title_blocks.sort(key=lambda b: b["title_score"], reverse=True)
+                best = page_title_blocks[0]
+
+                threshold_y = best["bbox"][3] + 10
+                candidates = [
+                    b for b in page_title_blocks
+                    if b["bbox"][1] <= threshold_y and abs(b["bbox"][1] - best["bbox"][1]) < 100
+                ]
+                candidates = sorted(candidates, key=lambda b: b["bbox"][0])
+
+                full_title = " ".join(b["text"].strip() for b in candidates if b["text"].strip())
+                return full_title.strip()
+
+        # Fallback 1: Use first large Section-header on first page
+        section_headers = [
+            item for item in sorted_items
+            if item["type"] == "Section-header" and item["page"] == 0 and item["text"].strip()
+        ]
+        if section_headers:
+            section_headers = sorted(section_headers, key=lambda b: (b["bbox"][1], -b["bbox"][3] - b["bbox"][1]))
+            return section_headers[0]["text"].strip()
+
+        # Fallback 2: Use the first non-empty text block on first page
+        text_blocks = [
+            item for item in sorted_items
+            if item["page"] == 0 and item["text"].strip()
+        ]
+        if text_blocks:
+            return sorted(text_blocks, key=lambda b: b["bbox"][1])[0]["text"].strip()
+
+        return ""
+
+    except Exception as e:
+        logging.error(f"Error in title detection: {e}")
+        print(f"Error in title detection: {e}")
+        traceback.print_exc()
+        return ""
+
+
+def run_pdf_processing():
     try:
         logging.info("Starting processing...")
         print("Starting processing...")
@@ -351,7 +378,7 @@ if __name__ == "_main_":
         if not files:
             logging.error("No PDF files found.")
             print("No PDF files found.")
-            exit(1)
+            return
 
         total_pages = 0
         pdf_page_counts = {}
@@ -375,7 +402,6 @@ if __name__ == "_main_":
                 received_pages_per_pdf[pdf_name] += 1
                 received_pages += 1
 
-                # Check if this PDF is fully processed
                 if received_pages_per_pdf[pdf_name] == pdf_page_counts[pdf_name]:
                     try:
                         base_name = os.path.splitext(os.path.basename(pdf_name))[0]
@@ -384,6 +410,9 @@ if __name__ == "_main_":
                         sorted_items = sorted(results_by_pdf[pdf_name], key=lambda x: (x["page"], x["bbox"][1]))
                         outline = detect_hierarchy(sorted_items)
                         title = detect_title(sorted_items)
+
+                        if outline and title.strip().lower() == outline[0]["text"].strip().lower():
+                            outline = outline[1:]
 
                         final_json = {
                             "title": title,
@@ -396,7 +425,6 @@ if __name__ == "_main_":
                         logging.info(f"Saved structured JSON for {base_name} to {out_path}")
                         print(f"Saved structured JSON for {base_name} to {out_path}")
 
-                        # Optional: Free up memory
                         del results_by_pdf[pdf_name]
                         del received_pages_per_pdf[pdf_name]
 
@@ -421,7 +449,14 @@ if __name__ == "_main_":
 
         logging.info(f"\nAll PDFs processed in {time.time() - start_time:.2f} seconds.")
         print(f"\nAll PDFs processed in {time.time() - start_time:.2f} seconds.")
+
     except Exception as e:
         logging.critical(f"Fatal error in main: {e}")
         print(f"Fatal error in main: {e}")
         traceback.print_exc()
+
+
+# --- Main ---
+
+if __name__ == "__main__":
+    run_pdf_processing()

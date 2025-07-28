@@ -1,0 +1,505 @@
+2025-07-27 16:47:03,991 INFO 13463 Starting processing...
+2025-07-27 16:47:03,992 INFO 13463 Starting worker 1
+2025-07-27 16:47:04,001 INFO 13463 Starting worker 2
+2025-07-27 16:47:04,005 INFO 13463 Starting worker 3
+2025-07-27 16:47:04,008 INFO 13463 Starting worker 4
+2025-07-27 16:47:08,671 WARNING 13494 Downloading detection model, please wait. This may take several minutes depending upon your network connection.
+2025-07-27 16:47:08,671 WARNING 13497 Downloading detection model, please wait. This may take several minutes depending upon your network connection.
+2025-07-27 16:47:08,671 WARNING 13496 Downloading detection model, please wait. This may take several minutes depending upon your network connection.
+2025-07-27 16:47:08,671 WARNING 13495 Downloading detection model, please wait. This may take several minutes depending upon your network connection.
+2025-07-27 16:47:16,990 INFO 13494 Download complete
+2025-07-27 16:47:16,990 WARNING 13494 Downloading recognition model, please wait. This may take several minutes depending upon your network connection.
+2025-07-27 16:47:17,492 ERROR 13497 Worker failed to load models: [Errno 2] No such file or directory: './models/temp.zip'
+2025-07-27 16:47:20,286 INFO 13494 Download complete.
+2025-07-27 16:47:21,239 ERROR 13495 Worker failed to load models: [Errno 2] No such file or directory: './models/temp.zip'
+2025-07-27 16:47:22,585 ERROR 13496 Worker failed to load models: [Errno 2] No such file or directory: './models/temp.zip'
+2025-07-27 16:47:22,592 INFO 13463 All workers are ready.
+2025-07-27 16:47:22,593 INFO 13463 Scanning input directory...
+2025-07-27 16:47:22,594 CRITICAL 13463 Fatal error in main: [Errno 2] No such file or directory: 'input'
+2025-07-27 16:52:08,557 INFO 13817 Starting processing...
+2025-07-27 16:52:08,583 INFO 13817 Starting worker 1
+2025-07-27 16:52:08,594 INFO 13817 Starting worker 2
+2025-07-27 16:52:08,598 INFO 13817 Starting worker 3
+2025-07-27 16:52:08,601 INFO 13817 Starting worker 4
+2025-07-27 16:52:14,575 INFO 13817 All workers are ready.
+2025-07-27 16:52:14,576 INFO 13817 Scanning input directory...
+2025-07-27 16:52:16,383 INFO 13817 Total pages queued: 29
+2025-07-27 16:52:16,384 INFO 13817 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-27 16:52:16,442 INFO 13817 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-27 16:52:16,444 INFO 13817 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-27 16:52:16,544 INFO 13817 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-27 16:52:17,358 INFO 13817 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-27 16:52:18,249 INFO 13817 Worker 13821 finished.
+2025-07-27 16:52:18,249 INFO 13817 Worker 13822 finished.
+2025-07-27 16:52:18,249 INFO 13817 Worker 13823 finished.
+2025-07-27 16:52:18,249 INFO 13817 Worker 13824 finished.
+2025-07-27 16:52:18,249 INFO 13817 
+All PDFs processed in 3.67 seconds.
+2025-07-27 17:28:06,583 INFO 19293 Starting processing...
+2025-07-27 17:28:06,606 INFO 19293 Starting worker 1
+2025-07-27 17:28:06,620 INFO 19293 Starting worker 2
+2025-07-27 17:28:06,623 INFO 19293 Starting worker 3
+2025-07-27 17:28:06,628 INFO 19293 Starting worker 4
+2025-07-27 17:28:13,269 INFO 19293 All workers are ready.
+2025-07-27 17:28:13,270 INFO 19293 Scanning input directory...
+2025-07-27 17:28:14,785 INFO 19293 Total pages queued: 29
+2025-07-27 17:28:14,786 INFO 19293 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-27 17:28:14,824 INFO 19293 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-27 17:28:14,826 INFO 19293 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-27 17:28:15,038 ERROR 19293 Error in title detection: name 'compute_title_score' is not defined
+2025-07-27 17:28:15,040 INFO 19293 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-27 17:28:15,906 ERROR 19293 Error in title detection: name 'compute_title_score' is not defined
+2025-07-27 17:28:15,907 INFO 19293 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-27 17:28:16,932 INFO 19293 Worker 19298 finished.
+2025-07-27 17:28:16,932 INFO 19293 Worker 19299 finished.
+2025-07-27 17:28:16,932 INFO 19293 Worker 19300 finished.
+2025-07-27 17:28:16,932 INFO 19293 Worker 19301 finished.
+2025-07-27 17:28:16,932 INFO 19293 
+All PDFs processed in 3.66 seconds.
+2025-07-28 10:20:52,604 INFO 38960 Starting processing...
+2025-07-28 10:20:52,627 INFO 38960 Starting worker 1
+2025-07-28 10:20:52,636 INFO 38960 Starting worker 2
+2025-07-28 10:20:52,639 INFO 38960 Starting worker 3
+2025-07-28 10:20:52,643 INFO 38960 Starting worker 4
+2025-07-28 10:21:03,198 INFO 38960 All workers are ready.
+2025-07-28 10:21:03,201 INFO 38960 Scanning input directory...
+2025-07-28 10:21:16,471 INFO 38960 Total pages queued: 124
+2025-07-28 10:21:16,718 INFO 38960 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:21:16,724 INFO 38960 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:21:21,734 INFO 38960 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:21:22,099 INFO 38960 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:21:22,216 INFO 38960 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:21:24,750 INFO 38960 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:21:25,631 INFO 38960 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:21:27,660 INFO 38960 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:21:28,726 INFO 38960 Worker 38964 finished.
+2025-07-28 10:21:28,727 INFO 38960 Worker 38965 finished.
+2025-07-28 10:21:28,732 INFO 38960 Worker 38966 finished.
+2025-07-28 10:21:28,732 INFO 38960 Worker 38967 finished.
+2025-07-28 10:21:28,732 INFO 38960 
+All PDFs processed in 25.53 seconds.
+2025-07-28 10:22:44,551 INFO 39330 Starting processing...
+2025-07-28 10:22:44,574 INFO 39330 Starting worker 1
+2025-07-28 10:22:44,582 INFO 39330 Starting worker 2
+2025-07-28 10:22:44,586 INFO 39330 Starting worker 3
+2025-07-28 10:22:44,589 INFO 39330 Starting worker 4
+2025-07-28 10:22:55,297 INFO 39330 All workers are ready.
+2025-07-28 10:22:55,299 INFO 39330 Scanning input directory...
+2025-07-28 10:23:09,359 INFO 39330 Total pages queued: 124
+2025-07-28 10:23:09,460 INFO 39330 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:23:09,476 INFO 39330 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:23:13,466 INFO 39330 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:23:13,520 INFO 39330 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:23:13,661 INFO 39330 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:23:13,729 INFO 39330 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:23:16,600 INFO 39330 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:23:18,212 INFO 39330 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:23:19,183 INFO 39330 Worker 39338 finished.
+2025-07-28 10:23:19,185 INFO 39330 Worker 39339 finished.
+2025-07-28 10:23:19,186 INFO 39330 Worker 39340 finished.
+2025-07-28 10:23:19,186 INFO 39330 Worker 39341 finished.
+2025-07-28 10:23:19,186 INFO 39330 
+All PDFs processed in 23.89 seconds.
+2025-07-28 10:28:51,041 INFO 39658 Starting processing...
+2025-07-28 10:28:51,060 INFO 39658 Starting worker 1
+2025-07-28 10:28:51,066 INFO 39658 Starting worker 2
+2025-07-28 10:28:51,069 INFO 39658 Starting worker 3
+2025-07-28 10:28:51,073 INFO 39658 Starting worker 4
+2025-07-28 10:29:03,688 INFO 39658 All workers are ready.
+2025-07-28 10:29:03,689 INFO 39658 Scanning input directory...
+2025-07-28 10:29:29,645 INFO 40048 Starting processing...
+2025-07-28 10:29:29,661 INFO 40048 Starting worker 1
+2025-07-28 10:29:29,666 INFO 40048 Starting worker 2
+2025-07-28 10:29:29,669 INFO 40048 Starting worker 3
+2025-07-28 10:29:29,673 INFO 40048 Starting worker 4
+2025-07-28 10:29:45,321 INFO 40048 All workers are ready.
+2025-07-28 10:29:45,323 INFO 40048 Scanning input directory...
+2025-07-28 10:29:59,734 INFO 40048 Total pages queued: 124
+2025-07-28 10:29:59,828 INFO 40048 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:29:59,834 INFO 40048 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:30:05,319 INFO 40048 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:30:05,976 INFO 40048 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:30:06,054 INFO 40048 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:30:08,982 INFO 40048 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:30:10,383 INFO 40048 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:30:12,300 INFO 40048 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:30:14,004 INFO 40048 Worker 40064 finished.
+2025-07-28 10:30:14,045 INFO 40048 Worker 40065 finished.
+2025-07-28 10:30:14,069 INFO 40048 Worker 40066 finished.
+2025-07-28 10:30:14,069 INFO 40048 Worker 40067 finished.
+2025-07-28 10:30:14,069 INFO 40048 
+All PDFs processed in 28.75 seconds.
+2025-07-28 10:31:53,007 INFO 40417 Starting processing...
+2025-07-28 10:31:53,028 INFO 40417 Starting worker 1
+2025-07-28 10:31:53,037 INFO 40417 Starting worker 2
+2025-07-28 10:31:53,041 INFO 40417 Starting worker 3
+2025-07-28 10:31:53,045 INFO 40417 Starting worker 4
+2025-07-28 10:32:04,471 INFO 40417 All workers are ready.
+2025-07-28 10:32:04,474 INFO 40417 Scanning input directory...
+2025-07-28 10:32:17,044 INFO 40417 Total pages queued: 124
+2025-07-28 10:32:17,219 INFO 40417 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:32:17,225 INFO 40417 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:32:20,708 INFO 40417 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:32:20,750 INFO 40417 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:32:21,021 INFO 40417 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:32:21,104 INFO 40417 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:32:23,584 INFO 40417 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:32:25,317 INFO 40417 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:32:26,408 INFO 40417 Worker 40423 finished.
+2025-07-28 10:32:26,409 INFO 40417 Worker 40424 finished.
+2025-07-28 10:32:26,409 INFO 40417 Worker 40425 finished.
+2025-07-28 10:32:26,409 INFO 40417 Worker 40426 finished.
+2025-07-28 10:32:26,409 INFO 40417 
+All PDFs processed in 21.93 seconds.
+2025-07-28 10:38:37,283 INFO 40744 Starting processing...
+2025-07-28 10:38:37,300 INFO 40744 Starting worker 1
+2025-07-28 10:38:37,307 INFO 40744 Starting worker 2
+2025-07-28 10:38:37,310 INFO 40744 Starting worker 3
+2025-07-28 10:38:37,314 INFO 40744 Starting worker 4
+2025-07-28 10:38:46,607 INFO 40744 All workers are ready.
+2025-07-28 10:38:46,609 INFO 40744 Scanning input directory...
+2025-07-28 10:38:58,480 INFO 40744 Total pages queued: 124
+2025-07-28 10:38:58,566 INFO 40744 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:38:58,570 INFO 40744 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:39:01,497 INFO 40744 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:39:01,567 INFO 40744 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:39:02,008 INFO 40744 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:39:02,023 INFO 40744 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:39:04,262 INFO 40744 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:39:06,113 INFO 40744 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:39:07,142 INFO 40744 Worker 40757 finished.
+2025-07-28 10:39:07,142 INFO 40744 Worker 40758 finished.
+2025-07-28 10:39:07,142 INFO 40744 Worker 40759 finished.
+2025-07-28 10:39:07,142 INFO 40744 Worker 40760 finished.
+2025-07-28 10:39:07,142 INFO 40744 
+All PDFs processed in 20.53 seconds.
+2025-07-28 10:53:43,022 INFO 42240 Starting processing...
+2025-07-28 10:53:43,044 INFO 42240 Starting worker 1
+2025-07-28 10:53:43,058 INFO 42240 Starting worker 2
+2025-07-28 10:53:43,062 INFO 42240 Starting worker 3
+2025-07-28 10:53:43,065 INFO 42240 Starting worker 4
+2025-07-28 10:53:54,522 INFO 42240 All workers are ready.
+2025-07-28 10:53:54,525 INFO 42240 Scanning input directory...
+2025-07-28 10:54:08,001 INFO 42240 Total pages queued: 124
+2025-07-28 10:54:08,106 INFO 42240 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:54:08,113 ERROR 42240 Error in title detection: name 'size_score' is not defined
+2025-07-28 10:54:08,116 INFO 42240 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:54:12,115 INFO 42240 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:54:12,245 INFO 42240 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:54:12,418 INFO 42240 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:54:12,739 INFO 42240 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:54:15,004 ERROR 42240 Error in title detection: name 'size_score' is not defined
+2025-07-28 10:54:15,007 INFO 42240 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:54:16,982 ERROR 42240 Error in title detection: name 'size_score' is not defined
+2025-07-28 10:54:16,983 INFO 42240 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:54:18,357 INFO 42240 Worker 42251 finished.
+2025-07-28 10:54:18,357 INFO 42240 Worker 42252 finished.
+2025-07-28 10:54:18,357 INFO 42240 Worker 42253 finished.
+2025-07-28 10:54:18,357 INFO 42240 Worker 42254 finished.
+2025-07-28 10:54:18,357 INFO 42240 
+All PDFs processed in 23.83 seconds.
+2025-07-28 10:56:37,304 INFO 42671 Starting processing...
+2025-07-28 10:56:37,320 INFO 42671 Starting worker 1
+2025-07-28 10:56:37,329 INFO 42671 Starting worker 2
+2025-07-28 10:56:37,333 INFO 42671 Starting worker 3
+2025-07-28 10:56:37,336 INFO 42671 Starting worker 4
+2025-07-28 10:56:48,841 INFO 42671 All workers are ready.
+2025-07-28 10:56:48,843 INFO 42671 Scanning input directory...
+2025-07-28 10:57:02,490 INFO 42671 Total pages queued: 124
+2025-07-28 10:57:02,611 INFO 42671 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:57:02,616 INFO 42671 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:57:07,671 INFO 42671 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:57:07,684 INFO 42671 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:57:08,166 INFO 42671 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:57:08,333 INFO 42671 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:57:11,077 INFO 42671 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:57:13,060 INFO 42671 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:57:14,716 INFO 42671 Worker 42681 finished.
+2025-07-28 10:57:14,717 INFO 42671 Worker 42682 finished.
+2025-07-28 10:57:14,717 INFO 42671 Worker 42683 finished.
+2025-07-28 10:57:14,717 INFO 42671 Worker 42684 finished.
+2025-07-28 10:57:14,717 INFO 42671 
+All PDFs processed in 25.87 seconds.
+2025-07-28 10:57:59,841 INFO 43000 Starting processing...
+2025-07-28 10:57:59,859 INFO 43000 Starting worker 1
+2025-07-28 10:57:59,865 INFO 43000 Starting worker 2
+2025-07-28 10:57:59,868 INFO 43000 Starting worker 3
+2025-07-28 10:57:59,872 INFO 43000 Starting worker 4
+2025-07-28 10:58:08,771 INFO 43000 All workers are ready.
+2025-07-28 10:58:08,772 INFO 43000 Scanning input directory...
+2025-07-28 10:58:20,191 INFO 43000 Total pages queued: 124
+2025-07-28 10:58:20,296 INFO 43000 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 10:58:20,305 INFO 43000 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 10:58:24,648 INFO 43000 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 10:58:24,797 INFO 43000 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 10:58:24,922 INFO 43000 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 10:58:27,128 INFO 43000 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 10:58:28,559 INFO 43000 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 10:58:30,115 INFO 43000 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 10:58:31,081 INFO 43000 Worker 43004 finished.
+2025-07-28 10:58:31,081 INFO 43000 Worker 43005 finished.
+2025-07-28 10:58:31,081 INFO 43000 Worker 43006 finished.
+2025-07-28 10:58:31,081 INFO 43000 Worker 43007 finished.
+2025-07-28 10:58:31,081 INFO 43000 
+All PDFs processed in 22.31 seconds.
+2025-07-28 11:02:14,609 INFO 43362 Starting processing...
+2025-07-28 11:02:14,625 INFO 43362 Starting worker 1
+2025-07-28 11:02:14,631 INFO 43362 Starting worker 2
+2025-07-28 11:02:14,636 INFO 43362 Starting worker 3
+2025-07-28 11:02:14,641 INFO 43362 Starting worker 4
+2025-07-28 11:02:24,232 INFO 43362 All workers are ready.
+2025-07-28 11:02:24,235 INFO 43362 Scanning input directory...
+2025-07-28 11:02:35,141 INFO 43362 Total pages queued: 124
+2025-07-28 11:02:35,230 INFO 43362 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 11:02:35,235 INFO 43362 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 11:02:39,780 INFO 43362 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 11:02:40,061 INFO 43362 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 11:02:40,171 INFO 43362 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 11:02:42,372 INFO 43362 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 11:02:43,353 INFO 43362 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 11:02:45,093 INFO 43362 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 11:02:46,187 INFO 43362 Worker 43368 finished.
+2025-07-28 11:02:46,187 INFO 43362 Worker 43369 finished.
+2025-07-28 11:02:46,187 INFO 43362 Worker 43370 finished.
+2025-07-28 11:02:46,188 INFO 43362 Worker 43371 finished.
+2025-07-28 11:02:46,188 INFO 43362 
+All PDFs processed in 21.95 seconds.
+2025-07-28 11:08:05,183 INFO 43888 Starting processing...
+2025-07-28 11:08:05,205 INFO 43888 Starting worker 1
+2025-07-28 11:08:05,217 INFO 43888 Starting worker 2
+2025-07-28 11:08:05,221 INFO 43888 Starting worker 3
+2025-07-28 11:08:05,224 INFO 43888 Starting worker 4
+2025-07-28 11:08:14,804 INFO 43888 All workers are ready.
+2025-07-28 11:08:14,805 INFO 43888 Scanning input directory...
+2025-07-28 11:08:25,783 INFO 43888 Total pages queued: 124
+2025-07-28 11:08:25,866 INFO 43888 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 11:08:25,871 INFO 43888 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 11:08:30,916 INFO 43888 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 11:08:31,220 INFO 43888 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 11:08:31,338 INFO 43888 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 11:08:33,754 INFO 43888 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 11:08:34,610 INFO 43888 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 11:08:36,359 INFO 43888 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 11:08:37,430 INFO 43888 Worker 43894 finished.
+2025-07-28 11:08:37,435 INFO 43888 Worker 43895 finished.
+2025-07-28 11:08:37,435 INFO 43888 Worker 43896 finished.
+2025-07-28 11:08:37,435 INFO 43888 Worker 43897 finished.
+2025-07-28 11:08:37,435 INFO 43888 
+All PDFs processed in 22.63 seconds.
+2025-07-28 11:14:12,032 INFO 44592 Starting processing...
+2025-07-28 11:14:12,055 INFO 44592 Starting worker 1
+2025-07-28 11:14:12,062 INFO 44592 Starting worker 2
+2025-07-28 11:14:12,065 INFO 44592 Starting worker 3
+2025-07-28 11:14:12,069 INFO 44592 Starting worker 4
+2025-07-28 11:14:22,909 INFO 44592 All workers are ready.
+2025-07-28 11:14:22,910 INFO 44592 Scanning input directory...
+2025-07-28 11:14:35,840 INFO 44592 Total pages queued: 124
+2025-07-28 11:14:35,948 INFO 44592 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 11:14:35,953 INFO 44592 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 11:14:40,437 INFO 44592 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 11:14:40,892 INFO 44592 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 11:14:41,019 INFO 44592 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 11:14:43,190 INFO 44592 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 11:14:44,294 INFO 44592 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 11:14:46,021 INFO 44592 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 11:14:46,979 INFO 44592 Worker 44596 finished.
+2025-07-28 11:14:46,979 INFO 44592 Worker 44597 finished.
+2025-07-28 11:14:46,979 INFO 44592 Worker 44598 finished.
+2025-07-28 11:14:46,979 INFO 44592 Worker 44599 finished.
+2025-07-28 11:14:46,979 INFO 44592 
+All PDFs processed in 24.07 seconds.
+2025-07-28 11:17:17,165 INFO 44893 Starting processing...
+2025-07-28 11:17:17,175 INFO 44893 Starting worker 1
+2025-07-28 11:17:17,182 INFO 44893 Starting worker 2
+2025-07-28 11:17:17,186 INFO 44893 Starting worker 3
+2025-07-28 11:17:17,190 INFO 44893 Starting worker 4
+2025-07-28 11:17:26,930 INFO 44893 All workers are ready.
+2025-07-28 11:17:26,932 INFO 44893 Scanning input directory...
+2025-07-28 11:17:39,175 INFO 44893 Total pages queued: 124
+2025-07-28 11:17:39,265 INFO 44893 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 11:17:39,272 INFO 44893 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 11:17:44,630 INFO 44893 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 11:17:44,737 INFO 44893 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 11:17:44,806 INFO 44893 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 11:17:47,515 INFO 44893 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 11:17:48,476 INFO 44893 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 11:17:50,174 INFO 44893 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 11:17:51,438 INFO 44893 Worker 44904 finished.
+2025-07-28 11:17:51,438 INFO 44893 Worker 44905 finished.
+2025-07-28 11:17:51,438 INFO 44893 Worker 44906 finished.
+2025-07-28 11:17:51,438 INFO 44893 Worker 44907 finished.
+2025-07-28 11:17:51,438 INFO 44893 
+All PDFs processed in 24.51 seconds.
+2025-07-28 11:19:54,249 INFO 45200 Starting processing...
+2025-07-28 11:19:54,265 INFO 45200 Starting worker 1
+2025-07-28 11:19:54,272 INFO 45200 Starting worker 2
+2025-07-28 11:19:54,276 INFO 45200 Starting worker 3
+2025-07-28 11:19:54,280 INFO 45200 Starting worker 4
+2025-07-28 11:20:04,192 INFO 45200 All workers are ready.
+2025-07-28 11:20:04,193 INFO 45200 Scanning input directory...
+2025-07-28 11:20:15,447 INFO 45200 Total pages queued: 124
+2025-07-28 11:20:15,533 INFO 45200 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 11:20:15,538 INFO 45200 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 11:20:19,434 INFO 45200 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 11:20:20,021 INFO 45200 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 11:20:20,043 INFO 45200 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 11:20:22,050 INFO 45200 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 11:20:23,237 INFO 45200 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 11:20:25,032 INFO 45200 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 11:20:26,039 INFO 45200 Worker 45212 finished.
+2025-07-28 11:20:26,041 INFO 45200 Worker 45213 finished.
+2025-07-28 11:20:26,041 INFO 45200 Worker 45214 finished.
+2025-07-28 11:20:26,041 INFO 45200 Worker 45215 finished.
+2025-07-28 11:20:26,041 INFO 45200 
+All PDFs processed in 21.85 seconds.
+2025-07-28 11:24:17,008 INFO 45580 Starting processing...
+2025-07-28 11:24:17,024 INFO 45580 Starting worker 1
+2025-07-28 11:24:17,031 INFO 45580 Starting worker 2
+2025-07-28 11:24:17,034 INFO 45580 Starting worker 3
+2025-07-28 11:24:17,038 INFO 45580 Starting worker 4
+2025-07-28 11:24:26,474 INFO 45580 All workers are ready.
+2025-07-28 11:24:26,475 INFO 45580 Scanning input directory...
+2025-07-28 11:24:37,885 INFO 45580 Total pages queued: 124
+2025-07-28 11:24:37,975 INFO 45580 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 11:24:37,980 INFO 45580 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 11:24:42,049 INFO 45580 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 11:24:42,626 INFO 45580 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 11:24:42,683 INFO 45580 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 11:24:44,911 INFO 45580 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 11:24:46,774 INFO 45580 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 11:24:48,983 INFO 45580 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 11:24:50,251 INFO 45580 Worker 45587 finished.
+2025-07-28 11:24:50,263 INFO 45580 Worker 45588 finished.
+2025-07-28 11:24:50,263 INFO 45580 Worker 45589 finished.
+2025-07-28 11:24:50,263 INFO 45580 Worker 45590 finished.
+2025-07-28 11:24:50,264 INFO 45580 
+All PDFs processed in 23.79 seconds.
+2025-07-28 11:25:29,305 INFO 45860 Starting processing...
+2025-07-28 11:25:29,324 INFO 45860 Starting worker 1
+2025-07-28 11:25:29,333 INFO 45860 Starting worker 2
+2025-07-28 11:25:29,336 INFO 45860 Starting worker 3
+2025-07-28 11:25:29,339 INFO 45860 Starting worker 4
+2025-07-28 11:25:37,672 INFO 45860 All workers are ready.
+2025-07-28 11:25:37,673 INFO 45860 Scanning input directory...
+2025-07-28 11:25:48,368 INFO 45860 Total pages queued: 124
+2025-07-28 11:25:48,439 INFO 45860 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 11:25:48,445 INFO 45860 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 11:25:52,951 INFO 45860 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 11:25:53,501 INFO 45860 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 11:25:53,570 INFO 45860 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 11:25:55,202 INFO 45860 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 11:25:56,674 INFO 45860 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 11:25:58,355 INFO 45860 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 11:25:59,306 INFO 45860 Worker 45865 finished.
+2025-07-28 11:25:59,314 INFO 45860 Worker 45866 finished.
+2025-07-28 11:25:59,315 INFO 45860 Worker 45867 finished.
+2025-07-28 11:25:59,315 INFO 45860 Worker 45868 finished.
+2025-07-28 11:25:59,315 INFO 45860 
+All PDFs processed in 21.64 seconds.
+2025-07-28 16:27:17,645 INFO 55279 Starting processing...
+2025-07-28 16:27:17,669 INFO 55279 Starting worker 1
+2025-07-28 16:27:17,680 INFO 55279 Starting worker 2
+2025-07-28 16:27:17,684 INFO 55279 Starting worker 3
+2025-07-28 16:27:17,692 INFO 55279 Starting worker 4
+2025-07-28 16:27:27,332 INFO 55279 All workers are ready.
+2025-07-28 16:27:27,334 INFO 55279 Scanning input directory...
+2025-07-28 16:27:38,755 INFO 55279 Total pages queued: 124
+2025-07-28 16:27:38,845 INFO 55279 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 16:27:38,850 INFO 55279 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 16:27:43,902 INFO 55279 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 16:27:44,315 INFO 55279 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 16:27:44,402 INFO 55279 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 16:27:46,906 INFO 55279 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 16:27:47,774 INFO 55279 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 16:27:49,613 INFO 55279 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 16:27:50,747 INFO 55279 Worker 55284 finished.
+2025-07-28 16:27:50,747 INFO 55279 Worker 55285 finished.
+2025-07-28 16:27:50,747 INFO 55279 Worker 55286 finished.
+2025-07-28 16:27:50,747 INFO 55279 Worker 55287 finished.
+2025-07-28 16:27:50,747 INFO 55279 
+All PDFs processed in 23.41 seconds.
+2025-07-28 18:18:18,313 INFO 58779 Starting processing...
+2025-07-28 18:18:18,334 INFO 58779 Starting worker 1
+2025-07-28 18:18:18,343 INFO 58779 Starting worker 2
+2025-07-28 18:18:18,347 INFO 58779 Starting worker 3
+2025-07-28 18:18:18,351 INFO 58779 Starting worker 4
+2025-07-28 18:18:29,047 INFO 58779 All workers are ready.
+2025-07-28 18:18:29,048 INFO 58779 Scanning input directory...
+2025-07-28 18:18:40,977 INFO 58779 Total pages queued: 124
+2025-07-28 18:18:41,065 INFO 58779 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 18:18:41,085 INFO 58779 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 18:18:46,504 INFO 58779 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 18:18:46,960 INFO 58779 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 18:18:46,997 INFO 58779 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 18:18:49,270 INFO 58779 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 18:18:50,267 INFO 58779 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 18:18:52,457 INFO 58779 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 18:18:53,537 INFO 58779 Worker 58792 finished.
+2025-07-28 18:18:53,538 INFO 58779 Worker 58793 finished.
+2025-07-28 18:18:53,538 INFO 58779 Worker 58794 finished.
+2025-07-28 18:18:53,540 INFO 58779 Worker 58795 finished.
+2025-07-28 18:18:53,540 INFO 58779 
+All PDFs processed in 24.49 seconds.
+2025-07-28 19:58:49,480 INFO 63445 Starting processing...
+2025-07-28 19:58:49,501 INFO 63445 Starting worker 1
+2025-07-28 19:58:49,512 INFO 63445 Starting worker 2
+2025-07-28 19:58:49,515 INFO 63445 Starting worker 3
+2025-07-28 19:58:49,521 INFO 63445 Starting worker 4
+2025-07-28 19:59:04,747 INFO 63445 All workers are ready.
+2025-07-28 19:59:04,749 INFO 63445 Scanning input directory...
+2025-07-28 19:59:18,536 INFO 63445 Total pages queued: 124
+2025-07-28 19:59:18,738 INFO 63445 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 19:59:18,744 INFO 63445 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 19:59:24,435 INFO 63445 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 19:59:24,564 INFO 63445 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 19:59:24,689 INFO 63445 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 19:59:27,895 INFO 63445 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 19:59:29,138 INFO 63445 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 19:59:31,198 INFO 63445 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 19:59:32,907 INFO 63445 Worker 63525 finished.
+2025-07-28 19:59:32,911 INFO 63445 Worker 63526 finished.
+2025-07-28 19:59:32,911 INFO 63445 Worker 63527 finished.
+2025-07-28 19:59:32,911 INFO 63445 Worker 63528 finished.
+2025-07-28 19:59:32,911 INFO 63445 
+All PDFs processed in 28.16 seconds.
+2025-07-28 20:16:01,234 INFO 64973 Starting processing...
+2025-07-28 20:16:01,252 INFO 64973 Starting worker 1
+2025-07-28 20:16:01,259 INFO 64973 Starting worker 2
+2025-07-28 20:16:01,262 INFO 64973 Starting worker 3
+2025-07-28 20:16:01,266 INFO 64973 Starting worker 4
+2025-07-28 20:16:12,905 INFO 64973 All workers are ready.
+2025-07-28 20:16:12,906 INFO 64973 Scanning input directory...
+2025-07-28 20:16:27,062 INFO 64973 Total pages queued: 124
+2025-07-28 20:16:27,321 INFO 64973 Saved structured JSON for South of France - Things to Do to sample_dataset/outputs/South of France - Things to Do.json
+2025-07-28 20:16:27,326 INFO 64973 Saved structured JSON for https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi to sample_dataset/outputs/https:mirror.las.iastate.edu:tex-archive:language:marathi:marathi.json
+2025-07-28 20:16:34,063 INFO 64973 Saved structured JSON for test to sample_dataset/outputs/test.json
+2025-07-28 20:16:34,573 INFO 64973 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 20:16:34,600 INFO 64973 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 20:16:39,183 INFO 64973 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 20:16:39,700 INFO 64973 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 20:16:41,778 INFO 64973 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 20:16:43,131 INFO 64973 Worker 64980 finished.
+2025-07-28 20:16:43,131 INFO 64973 Worker 64981 finished.
+2025-07-28 20:16:43,132 INFO 64973 Worker 64982 finished.
+2025-07-28 20:16:43,132 INFO 64973 Worker 64983 finished.
+2025-07-28 20:16:43,132 INFO 64973 
+All PDFs processed in 30.23 seconds.
+2025-07-28 20:23:32,719 INFO 65254 Starting processing...
+2025-07-28 20:23:32,741 INFO 65254 Starting worker 1
+2025-07-28 20:23:32,750 INFO 65254 Starting worker 2
+2025-07-28 20:23:32,754 INFO 65254 Starting worker 3
+2025-07-28 20:23:32,757 INFO 65254 Starting worker 4
+2025-07-28 20:23:49,586 INFO 65254 All workers are ready.
+2025-07-28 20:23:49,594 INFO 65254 Scanning input directory...
+2025-07-28 20:23:55,151 INFO 65254 Total pages queued: 29
+2025-07-28 20:23:55,579 INFO 65254 Saved structured JSON for file01 to sample_dataset/outputs/file01.json
+2025-07-28 20:23:55,596 INFO 65254 Saved structured JSON for file04 to sample_dataset/outputs/file04.json
+2025-07-28 20:23:55,896 INFO 65254 Saved structured JSON for file05 to sample_dataset/outputs/file05.json
+2025-07-28 20:23:57,357 INFO 65254 Saved structured JSON for file03 to sample_dataset/outputs/file03.json
+2025-07-28 20:23:59,308 INFO 65254 Saved structured JSON for file02 to sample_dataset/outputs/file02.json
+2025-07-28 20:24:01,106 INFO 65254 Worker 65258 finished.
+2025-07-28 20:24:01,107 INFO 65254 Worker 65259 finished.
+2025-07-28 20:24:01,107 INFO 65254 Worker 65260 finished.
+2025-07-28 20:24:01,107 INFO 65254 Worker 65261 finished.
+2025-07-28 20:24:01,107 INFO 65254 
+All PDFs processed in 11.51 seconds.
