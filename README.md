@@ -45,32 +45,30 @@ adobe/
 ## 🧠 Our Approach
 Our solution takes a hybrid visual + text-based strategy for extracting structured headings from PDFs, optimized for offline execution.
 
-🔍 **Pipeline Overview**
-**PDF → Image Conversion:**
+🔍 Pipeline Overview
+
+**PDF → Image Conversion**  
 Each PDF page is converted into a high-resolution image to enable visual analysis.
 
-**YOLOv8-Based Layout Detection:**
-We use a lightweight YOLOv10 model (trained/fine-tuned for document layouts) to detect key elements such as:
-1.Titles
-2.Section Headers (H1, H2, H3)
-3.Tables, Images, and other structural blocks
+**YOLOv8-Based Layout Detection**  
+We use a lightweight YOLOv10 model (5.8 MB) trained for document layouts to detect:
+- Titles
+- Section Headers (H1, H2, H3)
+- Tables, Images, and other structural blocks
 
-This returns bounding boxes and labels for relevant content.
+**Text Extraction (PyMuPDF)**  
+For each detected region, PyMuPDF extracts only the text inside that bounding box.
 
-**Region-Specific Text Extraction (PyMuPDF):**
-For each title/header region detected by YOLO(5.8 MB), we use PyMuPDF to extract only the text within that box on the corresponding PDF page. This ensures clean, layout-aware extraction while avoiding surrounding noise.
+**Header Hierarchy via Clustering**  
+Using font size, x/y position, and page number, we apply KMeans to assign levels: Title, H1, H2, H3.
 
-**Header Hierarchy via Clustering:**
-The extracted headers are analyzed using their font sizes, x/y positions, and page numbers. A clustering algorithm (KMeans) groups similar headers and assigns hierarchy levels (Title, H1, H2, H3).
+**OCR Fallback (Tesseract)**  
+If no text is extractable or the page is scanned, OCR is used as fallback.
 
-**OCR Fallback (Optional):**
-If a page has no extractable text or contains scanned content, Tesseract OCR is triggered on that image page—only when required.
-
-**JSON Output Generation:**
-The final output is a structured JSON with the document title and a hierarchical outline[], each entry containing:
-level: H1/H2/H3,
-text: Header text,
-page: Page number.
+**JSON Output Generation**  
+Final output contains:
+- `title`
+- `outline[]`: entries with `level`, `text`, and `page`
 
 ## 🎯 Key Features
 
