@@ -42,11 +42,44 @@ adobe/
 
 ## 🛠️ Technical Stack
 
-- **Language**: Python 3.9
-- **PDF Processing**: PyMuPDF (fitz)
+- **Language**: Python 3.10
+- **PDF Processing**: PyMuPDF (fitz),EasyOCR
 - **Containerization**: Docker with AMD64 platform
 - **Output Format**: Structured JSON
 - **Architecture**: Modular, scalable design
+
+## 🧠 Our Approach
+Our solution takes a hybrid visual + text-based strategy for extracting structured headings from PDFs, optimized for offline execution.
+
+🔍 **Pipeline Overview**
+**PDF → Image Conversion**
+Each PDF page is converted into a high-resolution image to enable visual analysis.
+
+**YOLOv8-Based Layout Detection**
+We use a lightweight YOLOv10 model (trained/fine-tuned for document layouts) to detect key elements such as:
+1.Titles
+2.Section Headers (H1, H2, H3)
+3.Tables, Images, and other structural blocks
+
+This returns bounding boxes and labels for relevant content.
+
+**Region-Specific Text Extraction (PyMuPDF)**
+For each title/header region detected by YOLO(5.8 MB), we use PyMuPDF to extract only the text within that box on the corresponding PDF page. This ensures clean, layout-aware extraction while avoiding surrounding noise.
+
+**Header Hierarchy via Clustering**
+The extracted headers are analyzed using their font sizes, x/y positions, and page numbers. A clustering algorithm (KMeans) groups similar headers and assigns hierarchy levels (Title, H1, H2, H3).
+
+**OCR Fallback (Optional)**
+If a page has no extractable text or contains scanned content, Tesseract OCR is triggered on that image page—only when required.
+
+**JSON Output Generation**
+The final output is a structured JSON with the document title and a hierarchical outline[], each entry containing:
+
+level: H1/H2/H3
+
+text: Header text
+
+page: Page number
 
 ## 🎯 Key Features
 
@@ -55,6 +88,7 @@ adobe/
 - Intelligent text extraction
 - Error handling and logging
 - Memory-efficient processing
+- Multilingual document support
 
 ### Advanced Document Intelligence
 - Persona-aware content analysis
@@ -79,10 +113,12 @@ adobe/
 
 Our solutions prioritize:
 
-1. **Accuracy**: Robust algorithms for reliable document processing
-2. **Performance**: Optimized code meeting strict time constraints
+1. **Accuracy**: Layout + clustering + font rules for precise extraction
+2. **Performance**: CPU-optimized, under 10s per 50-page PDF
 3. **Scalability**: Modular design for easy extension
-4. **Usability**: Clear interfaces and comprehensive documentation
+4. **Usability**: Simple I/O, clear logs, auto-evaluation
+5. **Fallbacks**: OCR auto-triggers on scanned pages
+6. **Automation**: Batch mode and comparator for fast testing
 
 ## 📋 Submission Requirements Met
 
@@ -103,14 +139,15 @@ Our solutions prioritize:
 ## 🏗️ Architecture Decisions
 
 ### PDF Processing
-- **PyMuPDF Choice**: Reliable, fast, and comprehensive PDF handling
-- **Pattern Matching**: Robust heading detection across document formats
-- **Memory Management**: Streaming processing for large documents
+- **PyMuPDF**: Used for high-precision text extraction from PDFs using bounding boxes
+- **YOLOv8 Layout Detection**: Detects titles, headers, tables, and images visually from each page
+- **OCR Integration (Fallback)**: Tesseract OCR runs only when native text is missing
 
-### Intelligence Algorithm
-- **Keyword-Based Scoring**: Transparent and interpretable relevance calculation
-- **Persona Mapping**: Flexible classification system for diverse user types
-- **Normalization**: Length-aware scoring to prevent bias
+### Performance Optimization
+
+- **Offline-First**: Runs without internet using CPU (amd64) under 10s per 50-page document
+- **Modular Pipeline**: Easily debuggable stages — layout → extract → cluster → output
+- **Memory Efficiency**: Avoids full-document loading with page-by-page processing
 
 ### Containerization
 - **AMD64 Platform**: Ensuring compatibility across deployment environments
@@ -119,10 +156,13 @@ Our solutions prioritize:
 
 ## 🎉 Innovation Highlights
 
-- **Adaptive Persona Recognition**: Flexible handling of diverse user descriptions
-- **Multi-Factor Relevance Scoring**: Comprehensive content evaluation
-- **Hierarchical Content Analysis**: Deep document structure understanding
-- **Performance Optimization**: Efficient algorithms meeting strict time constraints
+- **Visual + Semantic Hybrid Detection**: Combines deep layout detection (YOLO) with      font-based logic
+- **Smart Fallbacks**: OCR automatically triggers on scanned or image-based PDFs
+- **High Accuracy at Low Cost**: Delivers near-Adobe-level output using lightweight models
+- **Auto-Evaluation Pipeline**: Built-in comparator script to match Adobe’s JSON structure
+- **Batch-Ready Design**: Supports multi-document processing with minimal config
+
+
 
 ## 📝 Documentation
 
