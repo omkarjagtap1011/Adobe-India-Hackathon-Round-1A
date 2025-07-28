@@ -82,6 +82,93 @@ Our system identifies and returns the most relevant sections of a PDF tailored t
 | Data Format       | JSON                           | For structured input and output                      |
 | Containerization  | Docker (AMD64)                 | Optional for reproducible, isolated execution         |
 
+## 🎯 Key Features
+
+### Intelligent Document Retrieval  
+- Persona-based section filtering  
+- Task-aware document prioritization  
+- Semantic chunk indexing and reranking  
+- Structured, persona-aligned JSON output
+
+### Offline & Efficient  
+- Entirely local execution (no internet needed)  
+- Lightweight models for embedding and reranking  
+- Fast semantic search with ChromaDB  
+- Docker-ready deployment with AMD64 support
+
+---
+
+## 📊 Performance Highlights  
+- **Execution Time**: < 60 seconds for multi-document inputs  
+- **Model Size**: Under 200MB   
+- **Accuracy**: Persona-aware semantic reranking using `nomic-embed-text`  
+- **Scalability**: Supports multi-document, multi-persona batches
+
+---
+
+## 🔧 Development Approach  
+- **Modular Reuse**: Leveraged the YOLO-based PDF layout extraction pipeline from Round 1A to ensure consistent and high-accuracy section detection across rounds.
+
+Our Round 1B solution emphasizes:
+
+- **Accuracy**: Persona + JTBD mapped to semantic query, refined with reranking  
+- **Performance**: ChromaDB + fast embedding/reranking with minimal overhead  
+- **Scalability**: Easily handles multiple PDFs and inputs  
+- **Usability**: JSON-driven I/O, logs, and auto-output generator  
+- **Automation**: End-to-end script processes PDFs → JSON without manual intervention  
+
+---
+
+## 📋 Submission Requirements Met  
+
+✅ **Challenge 1B Requirements**  
+- Intelligent section extraction for persona and job-to-be-done  
+- Relevance ranking and filtering  
+- Structured JSON format with metadata  
+- Full offline execution (no external API)  
+- Docker containerization (AMD64 compatible)  
+
+---
+
+## 🏗️ Architecture Decisions  
+
+### PDF Processing  
+- **PyMuPDF**: High-performance, per-page text extraction  
+- **Section Chunking**: Large sections split into manageable text blocks  
+- **Structured JSON Output**: Easy downstream use and validation  
+
+### Vector Search & Reranking  
+- **ChromaDB**: Fast, persistent vector storage and retrieval  
+- **Ollama + `nomic-embed-text`**: Used for embedding and semantic reranking  
+- **CrossEncoder**: Further refines the relevance of retrieved chunks  
+
+### Optimization  
+- **Offline-First**: Embeddings, search, and reranking run locally  
+- **Low Footprint**: Lightweight models meet all system constraints  
+- **Batch Mode**: Multi-document, persona-based processing enabled  
+
+---
+
+## 🎉 Innovation Highlights  
+
+- **Persona-Aware Relevance**: Semantic understanding of user's role and intent  
+- **Hybrid Ranking**: Combines vector search with cross-encoder refinement  
+- **Efficient & Offline**: No internet or cloud calls; fully CPU-compliant  
+- **Plug-and-Play Architecture**: Easily extendable to new personas or tasks  
+- **Auto Structuring**: Output JSON aligned exactly to Adobe’s schema  
+
+---
+
+## 📝 Documentation
+
+Each challenge folder includes a README with:
+
+- Implementation details  
+- Pipeline explanation  
+- Model setup  
+- Docker usage  
+- Output samples  
+- Compliance checklist  
 
    
 
