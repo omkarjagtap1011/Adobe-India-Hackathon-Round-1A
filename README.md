@@ -8,7 +8,7 @@ Adobe's hackathon presents real-world document intelligence problems that requir
 
 ## 📁 Project Structure
 
-
+```
 ADOBE_PDF_EXTRACTORS/
 └── Challenge_1a/
     ├── __pycache__/             # Compiled Python bytecode
@@ -25,6 +25,7 @@ ADOBE_PDF_EXTRACTORS/
     ├── processing.log           # Logs for tracking processing output
     ├── README.md                # Challenge 1A documentation
     └── requirements.txt         # List of required Python packages
+```
 
 ## 🚀 Solutions Summary
 
